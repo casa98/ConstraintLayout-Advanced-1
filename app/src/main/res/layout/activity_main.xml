@@ -1,240 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/header_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@null"
-        app:layout_constraintDimensionRatio="16:9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/header" />
-
-    <ImageView
-        android:id="@+id/poster_image"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/header_image"
-        app:layout_constraintDimensionRatio="w,2:3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_image"
-        app:srcCompat="@drawable/poster" />
-
-    <TextView
-        android:id="@+id/movie_title_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/movie_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintEnd_toStartOf="@+id/bookmark_image"
-        app:layout_constraintStart_toEndOf="@+id/poster_image"
-        app:layout_constraintTop_toBottomOf="@+id/header_image" />
-
-    <ImageView
-        android:id="@+id/bookmark_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/movie_title_text"
-        app:layout_constraintTop_toBottomOf="@+id/header_image"
-        app:srcCompat="@drawable/ic_bookmark"
-        app:tint="@color/colorAccent" />
-
-    <TextView
-        android:id="@+id/movie_description_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/movie_description"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/bookmark_image"
-        app:layout_constraintStart_toEndOf="@+id/poster_image"
-        app:layout_constraintTop_toBottomOf="@+id/movie_title_text" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="poster_image,movie_description_text"
-        tools:layout_editor_absoluteY="731dp" />
-
-    <Button
-        android:id="@+id/rent_book_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:text="@string/rent_movie"
-        app:layout_constraintEnd_toStartOf="@+id/buy_book_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_description_text" />
-
-    <Button
-        android:id="@+id/buy_book_button"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/buy_movie"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rent_book_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/rent_book_button" />
-
-    <View
-        android:id="@+id/view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rent_book_button" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_1_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toStartOf="@+id/floating_2_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/ic_bookmark"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/header" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_2_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:backgroundTint="@color/colorPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/floating_3_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/floating_1_button"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/tomato"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/poster_image"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/header_image"
+            app:layout_constraintDimensionRatio="w,2:3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_image"
+            app:srcCompat="@drawable/poster" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_3_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:layout_constraintEnd_toStartOf="@+id/floating_4_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/floating_2_button"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/ic_bookmark"
-        android:focusable="true" />
+        <TextView
+            android:id="@+id/movie_title_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/movie_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintEnd_toStartOf="@+id/bookmark_image"
+            app:layout_constraintStart_toEndOf="@+id/poster_image"
+            app:layout_constraintTop_toBottomOf="@+id/header_image" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_4_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        app:backgroundTint="@android:color/holo_blue_bright"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/floating_3_button"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/tomato"
-        android:focusable="true" />
+        <ImageView
+            android:id="@+id/bookmark_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_title_text"
+            app:layout_constraintTop_toBottomOf="@+id/header_image"
+            app:srcCompat="@drawable/ic_bookmark"
+            app:tint="@color/colorAccent" />
 
-    <TextView
-        android:id="@+id/label_floating_1_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/movie_rating"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/floating_1_button"
-        app:layout_constraintStart_toStartOf="@+id/floating_1_button"
-        app:layout_constraintTop_toBottomOf="@+id/floating_1_button" />
+        <TextView
+            android:id="@+id/movie_description_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/movie_description"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/bookmark_image"
+            app:layout_constraintStart_toEndOf="@+id/poster_image"
+            app:layout_constraintTop_toBottomOf="@+id/movie_title_text" />
 
-    <TextView
-        android:id="@+id/label_floating_2_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/movie_family"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/floating_2_button"
-        app:layout_constraintStart_toStartOf="@+id/floating_2_button"
-        app:layout_constraintTop_toBottomOf="@+id/floating_2_button" />
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="poster_image,movie_description_text"
+            tools:layout_editor_absoluteY="731dp" />
 
-    <TextView
-        android:id="@+id/label_floating_3_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/movie_acceptance"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/floating_3_button"
-        app:layout_constraintStart_toStartOf="@+id/floating_3_button"
-        app:layout_constraintTop_toBottomOf="@+id/floating_3_button" />
+        <Button
+            android:id="@+id/rent_book_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/rent_movie"
+            app:layout_constraintEnd_toStartOf="@+id/buy_book_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movie_description_text" />
 
-    <TextView
-        android:id="@+id/label_floating_4_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/movie_similar"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/floating_4_button"
-        app:layout_constraintStart_toStartOf="@+id/floating_4_button"
-        app:layout_constraintTop_toBottomOf="@+id/floating_4_button" />
+        <Button
+            android:id="@+id/buy_book_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/buy_movie"
+            app:layout_constraintBaseline_toBaselineOf="@+id/rent_book_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rent_book_button" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="label_floating_4_text,label_floating_2_text,label_floating_3_text,label_floating_1_text"
-        tools:layout_editor_absoluteY="731dp" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rent_book_button" />
 
-    <TextView
-        android:id="@+id/abstract_movie_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
-        android:text="@string/abstract_movie"
-        app:layout_constraintEnd_toEndOf="@+id/label_floating_4_text"
-        app:layout_constraintStart_toStartOf="@+id/label_floating_1_text"
-        app:layout_constraintTop_toBottomOf="@+id/label_floating_2_text" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@+id/floating_2_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:maxImageSize="32dp"
+            app:srcCompat="@drawable/ic_bookmark"
+            android:focusable="true" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toStartOf="@+id/floating_3_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/floating_1_button"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:maxImageSize="32dp"
+            app:srcCompat="@drawable/tomato" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_3_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@+id/floating_4_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/floating_2_button"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:maxImageSize="32dp"
+            app:srcCompat="@drawable/ic_bookmark"
+            android:focusable="true" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_4_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            app:backgroundTint="@android:color/holo_blue_bright"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/floating_3_button"
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:maxImageSize="32dp"
+            app:srcCompat="@drawable/tomato"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/label_floating_1_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/movie_rating"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/floating_1_button"
+            app:layout_constraintStart_toStartOf="@+id/floating_1_button"
+            app:layout_constraintTop_toBottomOf="@+id/floating_1_button" />
+
+        <TextView
+            android:id="@+id/label_floating_2_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/movie_family"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/floating_2_button"
+            app:layout_constraintStart_toStartOf="@+id/floating_2_button"
+            app:layout_constraintTop_toBottomOf="@+id/floating_2_button" />
+
+        <TextView
+            android:id="@+id/label_floating_3_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/movie_acceptance"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/floating_3_button"
+            app:layout_constraintStart_toStartOf="@+id/floating_3_button"
+            app:layout_constraintTop_toBottomOf="@+id/floating_3_button" />
+
+        <TextView
+            android:id="@+id/label_floating_4_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/movie_similar"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/floating_4_button"
+            app:layout_constraintStart_toStartOf="@+id/floating_4_button"
+            app:layout_constraintTop_toBottomOf="@+id/floating_4_button" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="label_floating_4_text,label_floating_2_text,label_floating_3_text,label_floating_1_text"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <TextView
+            android:id="@+id/abstract_movie_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp"
+            android:text="@string/abstract_movie"
+            app:layout_constraintEnd_toEndOf="@+id/label_floating_4_text"
+            app:layout_constraintStart_toStartOf="@+id/label_floating_1_text"
+            app:layout_constraintTop_toBottomOf="@+id/label_floating_2_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

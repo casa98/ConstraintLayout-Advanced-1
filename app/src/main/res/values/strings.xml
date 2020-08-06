@@ -4,7 +4,11 @@
     <string name="movie_description">July 206, 124 minutes, Comedy</string>
     <string name="buy_movie">Buy movie</string>
     <string name="rent_movie">Rent movie</string>
-    <string name="abstract_movie">This is a movie that tells the story about a beautiful woman and a bastard beast that falls in love with her. I don\'t what happens them but this text is already long enough</string>
+    <string name="abstract_movie">This is a movie that tells the story about a beautiful woman and a bastard beast
+        that falls in love with her. I don\'t what happens them but this text is already long enough.
+        \nOh no, I don\'t think this text be long enough already, so that\'s why I\'m typing again.
+        \nPS: I do know about Lorem Ipsum, I just did\'nt want to use it this time haha.
+    </string>
     <string name="movie_rating">Rating</string>
     <string name="movie_family">Family</string>
     <string name="movie_acceptance">72%</string>
